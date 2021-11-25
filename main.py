@@ -18,3 +18,5 @@ while True:
         selection_sort(copy.deepcopy(list))
     if process=='2':
         insertion_sort(copy.deepcopy(list))
+    if process=='3':
+        quick_sort(copy.deepcopy(list))

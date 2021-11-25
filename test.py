@@ -30,16 +30,16 @@ def selection_sort(list_sort):
 
 #快速排序
 def quick_sort(list_sort):
+    start = time.time()
     """quick_sort"""
     if len(list_sort) >= 2:
         mid = list_sort[len(list_sort)//2]
         left,right = [], []
         list_sort.remove(mid)
-        for num in list_sort:
+        for num in tqdm.tqdm(list_sort):
             if num >= mid:
                 right.append(num)
             else:
                 left.append(num)
-        return quick_sort(left) + [mid] + quick_sort(right)
-    else:
-        return list_sort
+        end = time.time()
+        print("快速排序用时%.2f" % (end - start))
