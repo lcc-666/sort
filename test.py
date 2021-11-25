@@ -1,7 +1,6 @@
 import tqdm
 import time
-
-
+import random
 
 #插入排序
 # 定义函数 insertion_sort 接受参数 list_sort，并返回插入排序结果。
@@ -47,20 +46,7 @@ def quick_sort(list_sort):
 
 #希尔排序
 def shell_sort(list_sort):
-    n = len(list_sort)
-    gap = n // 2
-    while gap >= 1:
-        for j in tqdm.tqdm(range(gap, n),desc='希尔排序'):
-            i = j
-            while (i - gap) >= 0:
-                if list_sort[i] < list_sort[i - gap]:
-                    list_sort[i], list_sort[i - gap] = list_sort[i - gap], list_sort[i]
-                    i -= gap
-                else:
-                    break
-        gap //= 2
-
-
+    pass
 
 
 dict={1:'选择排序',2:'插入排序',3:'快速排序',4:'希尔排序'}
@@ -69,3 +55,9 @@ sort=['',
     'insertion_sort(copy.deepcopy(list))',
     'quick_sort(copy.deepcopy(list))',
     'shell_sort(copy.deepcopy(list))']
+
+if __name__ == '__main__':
+    list=[]
+    for i in range(10000):
+        list.append(random.randint(0, 1000))
+    shell_sort(list)
