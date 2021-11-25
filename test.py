@@ -28,3 +28,18 @@ def selection_sort(list_sort):
     end = time.time()
     print("插入排序用时%.2f" % (end - start))
 
+#快速排序
+def quick_sort(list_sort):
+    """quick_sort"""
+    if len(list_sort) >= 2:
+        mid = list_sort[len(list_sort)//2]
+        left,right = [], []
+        list_sort.remove(mid)
+        for num in list_sort:
+            if num >= mid:
+                right.append(num)
+            else:
+                left.append(num)
+        return quick_sort(left) + [mid] + quick_sort(right)
+    else:
+        return list_sort

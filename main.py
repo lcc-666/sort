@@ -2,7 +2,7 @@ import random
 from test import *
 import copy
 
-dict={1:'选择排序',2:'插入排序','q':'退出'}
+dict={1:'选择排序',2:'插入排序',3:'快速排序','q':'退出'}
 
 while True:
     num=input('请输入要排序的数字数量\n')
