@@ -45,8 +45,32 @@ def quick_sort(list_sort):
 
 
 #希尔排序
-def shell_sort(lists):
-    pass
+def shell_sort(list):
+    n = len(list)
+    test=n//2
+    ls=[]
+    while True:
+        test //= 2
+        ls.append(test)
+        if not test >= 1:
+            break
+    count=0
+    start = time.time()
+    for gap in tqdm.tqdm(ls,desc='希尔排序'):
+        count=count+1
+        for j in range(gap, n):
+            i = j
+            while (i - gap) >= 0:
+                if list[i] < list[i - gap]:
+                    list[i], list[i - gap] = list[i - gap], list[i]
+                    i -= gap
+                else:
+                    break
+    end = time.time()
+    print("希尔排序用时%.2f" % (end - start))
+
+
+
 
 
 dict={1:'选择排序',2:'插入排序',3:'快速排序',4:'希尔排序'}
@@ -58,6 +82,6 @@ sort=['',
 
 if __name__ == '__main__':
     list=[]
-    for i in range(10000):
+    for i in range(10):
         list.append(random.randint(0, 1000))
     shell_sort(list)
