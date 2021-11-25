@@ -45,7 +45,7 @@ def quick_sort(list_sort):
 
 
 #希尔排序
-def shell_sort(list_sort):
+def shell_sort(lists):
     pass
 
 
