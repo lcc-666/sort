@@ -1,6 +1,6 @@
 import tqdm
 import time
-import copy
+
 
 
 #插入排序
