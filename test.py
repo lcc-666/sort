@@ -1,4 +1,3 @@
-import random
 import tqdm
 import time
 import copy
@@ -29,13 +28,3 @@ def selection_sort(list_sort):
     end = time.time()
     print("插入排序用时%.2f" % (end - start))
 
-
-
-num=input('请输入要排序数字的数量\n')
-list=[]
-
-for i in range(eval(num)):
-    list.append(random.randint(0,200))
-selection_sort(copy.deepcopy(list))
-insertion_sort(copy.deepcopy(list))
-input('')
