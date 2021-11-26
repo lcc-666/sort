@@ -22,6 +22,7 @@ def main():
             exit()
         elif process in ['1','2','3','4']:
             eval(sort[eval(process)])
+            print('\n')
         else:
             print('您输入有误请从新输入')
 
