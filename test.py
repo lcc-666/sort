@@ -2,6 +2,9 @@ import tqdm
 import time
 import random
 
+
+
+
 #插入排序
 # 定义函数 insertion_sort 接受参数 list_sort，并返回插入排序结果。
 def insertion_sort(list_sort):
