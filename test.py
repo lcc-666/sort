@@ -51,11 +51,28 @@ class Sort():
                     right.append(num)
                 else:
                     left.append(num)
-            return (self.quick_sort(left) + [mid] + self.quick_sort(right))
+            #print( self.quick_sort_2(left) + [mid] + self.quick_sort_2(right))
         else:
-            return (list)
+            pass
+            #print (list_sort)
         end=time.time()
         print("快速排序用时%.2f" % (end - start))
+
+    def quick_sort_2(self,data):
+        if len(data) >= 2:
+            mid = data[len(data) // 2]
+            left, right = [], []
+            data.remove(mid)
+            for num in data:
+                if num >= mid:
+                    right.append(num)
+                else:
+                    left.append(num)
+            return self.quick_sort_2(left) + [mid] + self.quick_sort_2(right)
+        else:
+            return data
+
+
 
     def shell_sort(self):
         list=copy.deepcopy(self.alist)
@@ -174,4 +191,6 @@ class Sort():
 #     'shell_sort(copy.deepcopy(list))']
 
 if __name__ == '__main__':
-    t=Sort(10)
+    t=Sort(20)
+    t.quick_sort()
+    #t.quick_sort([3, 4, 2, 7, 8, 6, 5, 9, 0, 1])
