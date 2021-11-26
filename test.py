@@ -35,7 +35,7 @@ class Sort():
             list.append(min(list_sort))
             list_sort.remove(min(list_sort))
         end = time.time()
-        print("插入排序用时%.2f" % (end - start))
+        print("选择排序用时%.2f" % (end - start))
         #print(list)
 
     def quick_sort(self):
@@ -46,7 +46,7 @@ class Sort():
             mid = list_sort[len(list_sort) // 2]
             left, right = [], []
             list_sort.remove(mid)
-            for num in tqdm.tqdm(list_sort):
+            for num in tqdm.tqdm(list_sort,desc='快速排序'):
                 if num >= mid:
                     right.append(num)
                 else:
@@ -97,7 +97,7 @@ class Sort():
                     else:
                         break
         end = time.time()
-        print(list)
+        #print(list)
         print("希尔排序用时%.2f" % (end - start))
 
 
@@ -183,12 +183,12 @@ class Sort():
 #
 #
 #
-# dict={1:'选择排序',2:'插入排序',3:'快速排序',4:'希尔排序'}
-# sort=['',
-#     'selection_sort(copy.deepcopy(list))',
-#     'insertion_sort(copy.deepcopy(list))',
-#     'quick_sort(copy.deepcopy(list))',
-#     'shell_sort(copy.deepcopy(list))']
+dict={1:'选择排序',2:'插入排序',3:'快速排序',4:'希尔排序'}
+sort=['',
+    'alist.selection_sort()',
+    'alist.insertion_sort()',
+    'alist.quick_sort()',
+    'alist.shell_sort()']
 
 if __name__ == '__main__':
     t=Sort(20)

@@ -1,16 +1,12 @@
-import random
-from test import *
-import copy
-import numpy as np
+import time
+from test import Sort,dict,sort
 
 def main():
     dict[0]='退出'
     dict['+']='重新输入排序数量'
     num=input('请输入要排序的数字数量\n')
-    list=[]
     if num.isdigit():
-        for i in range(eval(num)):
-            list.append(random.randint(0, 1000))
+        alist=Sort(int(num))
     else:
         print('您输入的不是数字,请从新输入')
         main()
@@ -18,7 +14,6 @@ def main():
     while True:
         print('请选择你要进行的操作'+str(dict)+'\n')
         process=input()
-
         if process=='+':
             main()
         if process=='0':
@@ -30,9 +25,6 @@ def main():
         else:
             print('您输入有误请从新输入')
 
-alist=[]
-for i in range(10):
-    alist.append(i)
-np.random.shuffle(alist)
-print(alist)
 
+if __name__ == '__main__':
+    main()
