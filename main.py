@@ -1,14 +1,14 @@
 import random
 from test import *
 import copy
+import numpy as np
 
 def main():
     dict[0]='退出'
     dict['+']='重新输入排序数量'
     num=input('请输入要排序的数字数量\n')
     list=[]
-    if num.isdigit\
-                ():
+    if num.isdigit():
         for i in range(eval(num)):
             list.append(random.randint(0, 1000))
     else:
@@ -30,4 +30,9 @@ def main():
         else:
             print('您输入有误请从新输入')
 
-main()
+alist=[]
+for i in range(10):
+    alist.append(i)
+np.random.shuffle(alist)
+print(alist)
+
