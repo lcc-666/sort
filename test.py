@@ -51,11 +51,13 @@ class Sort():
                     right.append(num)
                 else:
                     left.append(num)
-            #print( self.quick_sort_2(left) + [mid] + self.quick_sort_2(right))
+            print( self.quick_sort_2(left) + [mid] + self.quick_sort_2(right))
         else:
+            print (list_sort)
             pass
-            #print (list_sort)
+
         end=time.time()
+
         print("快速排序用时%.2f" % (end - start))
 
     def quick_sort_2(self,data):
@@ -191,6 +193,4 @@ sort=['',
     'alist.shell_sort()']
 
 if __name__ == '__main__':
-    t=Sort(20)
-    t.quick_sort()
-    #t.quick_sort([3, 4, 2, 7, 8, 6, 5, 9, 0, 1])
+    pass
