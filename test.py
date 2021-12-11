@@ -41,7 +41,7 @@ class Sort():
     def quick_sort(self):
         #print('*****************************')
         list_sort=copy.deepcopy(self.alist)
-        print(list_sort)
+        #print(list_sort)
         start = time.time()
         """quick_sort"""
         if len(list_sort) >= 2:
@@ -56,18 +56,13 @@ class Sort():
             # print(list_sort,'mid='+str(mid))
             # print(left, right)
             # print('*****************************')
-            # print( self.quick_sort_2(left) + [mid] + self.quick_sort_2(right))
-        else:
-            print (list_sort)
-            pass
-
+            print( self.quick_sort_2(left) + [mid] + self.quick_sort_2(right))
         end=time.time()
-
         print("快速排序用时%.2f" % (end - start))
 
     def quick_sort_2(self,data):
         #print('*****************************')
-        print(data)
+        #print(data)
         if len(data) >= 2:
             mid = data[len(data) // 2]
             left, right = [], []
