@@ -78,9 +78,9 @@ class Sort():
                 else:
                     left.append(num)
 
-            print(data,'mid='+str(mid))
-            print(left,right)
-            print('*****************************')
+            # print(data,'mid='+str(mid))
+            # print(left,right)
+            # print('*****************************')
             return self.quick_sort_2(left) + [mid] + self.quick_sort_2(right)
         else:
             return data
