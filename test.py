@@ -39,13 +39,12 @@ class Sort():
         #print(list)
 
     def quick_sort(self):
-        #print('*****************************')
         list_sort=copy.deepcopy(self.alist)
-        print(list_sort)
         start = time.time()
         """quick_sort"""
         if len(list_sort) >= 2:
             mid = list_sort[len(list_sort) // 2]
+            print(list_sort,'mid='+str(mid))
             left, right = [], []
             list_sort.remove(mid)
             for num in tqdm.tqdm(list_sort,desc='快速排序'):
@@ -53,23 +52,16 @@ class Sort():
                     right.append(num)
                 else:
                     left.append(num)
-            # print(list_sort,'mid='+str(mid))
-            # print(left, right)
-            # print('*****************************')
-            # print( self.quick_sort_2(left) + [mid] + self.quick_sort_2(right))
-        else:
-            print (list_sort)
-            pass
-
+            print(left,'mid='+str(mid), right)
+            print('*****************************')
+            print( self.quick_sort_2(left) + [mid] + self.quick_sort_2(right))
         end=time.time()
-
         print("快速排序用时%.2f" % (end - start))
 
     def quick_sort_2(self,data):
-        #print('*****************************')
-        print(data)
         if len(data) >= 2:
             mid = data[len(data) // 2]
+            print(data, 'mid=' + str(mid))
             left, right = [], []
             data.remove(mid)
             for num in data:
@@ -77,10 +69,8 @@ class Sort():
                     right.append(num)
                 else:
                     left.append(num)
-
-            # print(data,'mid='+str(mid))
-            # print(left,right)
-            # print('*****************************')
+            print(left,'mid='+str(mid),right)
+            print('*****************************')
             return self.quick_sort_2(left) + [mid] + self.quick_sort_2(right)
         else:
             return data
